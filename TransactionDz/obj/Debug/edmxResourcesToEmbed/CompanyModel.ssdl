@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CompanyModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CompanyModelStoreContainer">
+    <EntitySet Name="ItemSet" EntityType="CompanyModel.Store.ItemSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CompanySet" EntityType="CompanyModel.Store.CompanySet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="CompanyItem" Association="CompanyModel.Store.CompanyItem">
+      <End Role="Company" EntitySet="CompanySet" />
+      <End Role="Item" EntitySet="ItemSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ItemSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CompanyId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="CompanySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="CompanyItem">
+    <End Role="Company" Type="CompanyModel.Store.CompanySet" Multiplicity="0..1" />
+    <End Role="Item" Type="CompanyModel.Store.ItemSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

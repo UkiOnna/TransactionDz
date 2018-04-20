@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="CompanyModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="CompanyModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ItemSet" EntityType="CompanyModel.Item" />
+    <EntitySet Name="CompanySet" EntityType="CompanyModel.Company" />
+    <AssociationSet Name="CompanyItem" Association="CompanyModel.CompanyItem">
+      <End Role="Company" EntitySet="CompanySet" />
+      <End Role="Item" EntitySet="ItemSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemName" Type="String" Nullable="false" />
+    <NavigationProperty Name="Company" Relationship="CompanyModel.CompanyItem" FromRole="Item" ToRole="Company" />
+    <Property Name="CompanyId" Type="Int32" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" Nullable="false" />
+    <NavigationProperty Name="Item" Relationship="CompanyModel.CompanyItem" FromRole="Company" ToRole="Item" />
+  </EntityType>
+  <Association Name="CompanyItem">
+    <End Type="CompanyModel.Company" Role="Company" Multiplicity="0..1" />
+    <End Type="CompanyModel.Item" Role="Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

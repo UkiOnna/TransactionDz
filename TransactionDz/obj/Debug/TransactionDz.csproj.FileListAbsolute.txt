@@ -1,0 +1,11 @@
+c:\users\сикировт\documents\visual studio 2017\Projects\TransactionDz\TransactionDz\bin\Debug\TransactionDz.exe.config
+c:\users\сикировт\documents\visual studio 2017\Projects\TransactionDz\TransactionDz\bin\Debug\TransactionDz.exe
+c:\users\сикировт\documents\visual studio 2017\Projects\TransactionDz\TransactionDz\bin\Debug\TransactionDz.pdb
+c:\users\сикировт\documents\visual studio 2017\Projects\TransactionDz\TransactionDz\bin\Debug\EntityFramework.dll
+c:\users\сикировт\documents\visual studio 2017\Projects\TransactionDz\TransactionDz\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\сикировт\documents\visual studio 2017\Projects\TransactionDz\TransactionDz\bin\Debug\EntityFramework.xml
+c:\users\сикировт\documents\visual studio 2017\Projects\TransactionDz\TransactionDz\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\сикировт\documents\visual studio 2017\Projects\TransactionDz\TransactionDz\bin\Debug\ru\EntityFramework.resources.dll
+c:\users\сикировт\documents\visual studio 2017\Projects\TransactionDz\TransactionDz\obj\Debug\TransactionDz.csprojResolveAssemblyReference.cache
+c:\users\сикировт\documents\visual studio 2017\Projects\TransactionDz\TransactionDz\obj\Debug\TransactionDz.exe
+c:\users\сикировт\documents\visual studio 2017\Projects\TransactionDz\TransactionDz\obj\Debug\TransactionDz.pdb
